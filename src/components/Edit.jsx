@@ -12,13 +12,16 @@ const Edit = ({ closeEditForm, editTodo }) => {
     e.preventDefault();
     const todo = { title, date };
 
-    const response = await fetch(`api/todos/${editTodo._id}`, {
-      method: "PATCH",
-      body: JSON.stringify(todo),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `http://localhost:4000/api/todos/${editTodo._id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(todo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await response.json();
 
     if (response.ok) {

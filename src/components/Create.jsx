@@ -14,7 +14,7 @@ const Create = ({ theme }) => {
 
     const todo = { title, date };
 
-    const response = await fetch(`api/todos`, {
+    const response = await fetch(`http://localhost:4000/api/todos`, {
       method: "POST",
       body: JSON.stringify(todo),
       headers: {

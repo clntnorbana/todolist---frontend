@@ -7,7 +7,7 @@ const Todos = ({ openEditForm, theme }) => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await fetch("api/todos");
+      const response = await fetch("http://localhost:4000/api/todos");
       const data = await response.json();
 
       if (response.ok) {

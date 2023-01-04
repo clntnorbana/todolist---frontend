@@ -13,9 +13,12 @@ const Todo = ({ todo, theme }) => {
   const closeEditForm = () => setIsEditFormOpen(false);
 
   const deleteTodo = async () => {
-    const response = await fetch(`api/todos/${todo._id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `http://localhost:4000/api/todos/${todo._id}`,
+      {
+        method: "DELETE",
+      }
+    );
     const data = await response.json();
 
     if (response.ok) {
