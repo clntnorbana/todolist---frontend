@@ -14,7 +14,7 @@ const Todo = ({ todo, theme }) => {
 
   const deleteTodo = async () => {
     const response = await fetch(
-      `http://localhost:4000/api/todos/${todo._id}`,
+      `https://clntn-todolist-api.onrender.com/api/todos/${todo._id}`,
       {
         method: "DELETE",
       }

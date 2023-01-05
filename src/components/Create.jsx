@@ -14,13 +14,16 @@ const Create = ({ theme }) => {
 
     const todo = { title, date };
 
-    const response = await fetch(`http://localhost:4000/api/todos`, {
-      method: "POST",
-      body: JSON.stringify(todo),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://clntn-todolist-api.onrender.com/api/todos`,
+      {
+        method: "POST",
+        body: JSON.stringify(todo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await response.json();
 
     if (response.ok) {

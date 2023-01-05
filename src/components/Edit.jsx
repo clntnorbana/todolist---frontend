@@ -13,7 +13,7 @@ const Edit = ({ closeEditForm, editTodo }) => {
     const todo = { title, date };
 
     const response = await fetch(
-      `http://localhost:4000/api/todos/${editTodo._id}`,
+      `https://clntn-todolist-api.onrender.com/api/todos/${editTodo._id}`,
       {
         method: "PATCH",
         body: JSON.stringify(todo),
