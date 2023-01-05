@@ -5,7 +5,7 @@ import { useTodosContext } from "../hooks/UseTodosContexts";
 const Create = ({ theme }) => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const { dispatch } = useTodosContext();
+  const { todos, dispatch } = useTodosContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,12 +59,16 @@ const Create = ({ theme }) => {
         />
       </div>
       <div className="mt-3 flex gap-3">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          Add todo
-        </button>
+        {todos.length <= 4 ? (
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Add todo
+          </button>
+        ) : (
+          "up to 5 todos only"
+        )}
       </div>
     </form>
   );
