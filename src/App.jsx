@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Create from "./components/Create";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Todos from "./components/Todos";
 
@@ -17,6 +18,7 @@ function App() {
         <Todos theme={theme} />
         <Create theme={theme} />
       </div>
+      <Footer />
     </div>
   );
 }
