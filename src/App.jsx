@@ -11,7 +11,7 @@ function App() {
     <div
       className={`${
         theme ? "bg-slate-900 text-white" : "bg-white text-slate-700"
-      } h-screen delay-100 ease-in`}
+      } h-screen delay-100 ease-in h-full`}
     >
       <Header setTheme={setTheme} theme={theme} />
       <div className="mt-5 px-10 lg:px-40 py-5 flex flex-col-reverse md:flex-row justify-between gap-8">
