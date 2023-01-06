@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import Create from "./components/Create";
 import Footer from "./components/Footer";
@@ -5,7 +6,14 @@ import Header from "./components/Header";
 import Todos from "./components/Todos";
 
 function App() {
-  const [theme, setTheme] = useState(false);
+  const getTheme = () => {
+    return JSON.parse(localStorage.getItem("theme")) || false;
+  };
+
+  const [theme, setTheme] = useState(getTheme());
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   return (
     <div
